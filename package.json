@@ -1,6 +1,6 @@
 {
   "name": "ember-router-service-refresh-polyfill",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Polyfill for Ember RFC 631",
   "keywords": [
     "ember-addon"
