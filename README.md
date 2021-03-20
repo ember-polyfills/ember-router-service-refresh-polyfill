@@ -1,14 +1,14 @@
 ember-router-service-refresh-polyfill
 ==============================================================================
 
-[Short description of the addon.]
+Polyfills the RouterService#refresh method as described in [RFC 631](https://emberjs.github.io/rfcs/0631-refresh-method-for-router-service.html).
 
 
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.16 or above
-* Ember CLI v2.13 or above
+* Ember.js v3.4 or above
+* Ember CLI v3.4 or above
 * Node.js v10 or above
 
 
@@ -23,8 +23,36 @@ ember install ember-router-service-refresh-polyfill
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+This addon polyfills the RouterService#refresh method which refreshes all currently active routes, doing a full transition.
 
+If a `routeName` is provided and refers to a currently active route,
+it will refresh only that route and its descendents.
+
+It returns a [Transition](https://api.emberjs.com/ember/release/classes/Transition) that will be resolved once the refresh is complete.
+All resetController, beforeModel, model, afterModel, redirect, and setupController
+hooks will be called again. You will get new data from the model hook.
+
+### Example
+
+```js
+import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
+
+export default class VeryRealComponent extends Component {
+  @service('router') routerService;
+
+  @action
+  refreshAllActiveRoutes() {
+    this.routerService.refresh();
+  }
+
+  @action
+  refreshNamedActiveRoute() {
+    this.routerService.refresh('some-active-route-name');
+  }
+}
+```
 
 Contributing
 ------------------------------------------------------------------------------
