@@ -1,5 +1,6 @@
 /* eslint-disable ember/no-private-routing-service */
 import { assert } from '@ember/debug';
+import { getOwner } from '@ember/application';
 
 export function initialize(application) {
   const RouterService = application.resolveRegistration('service:router');
@@ -33,7 +34,8 @@ export function initialize(application) {
         this.isActive(routeName)
       );
 
-      let pivotRoute = this._router._routerMicrolib.getRoute(routeName);
+      let owner = getOwner(this);
+      let pivotRoute = owner.lookup(`route:${routeName}`);
 
       return this._router._routerMicrolib.refresh(pivotRoute);
     },
