@@ -15,6 +15,9 @@
 /.eslintrc.js
 /.git/
 /.gitignore
+/.github/
+/.prettierignore
+/.prettierrc.js
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
@@ -22,6 +25,7 @@
 /config/ember-try.js
 /CONTRIBUTING.md
 /ember-cli-build.js
+/RELEASE.md
 /testem.js
 /tests/
 /yarn.lock
