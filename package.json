@@ -29,6 +29,7 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
+    "@embroider/macros": "^0.47.2",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^6.0.0"
   },
