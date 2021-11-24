@@ -2,9 +2,10 @@ import Application from '@ember/application';
 
 import config from 'dummy/config/environment';
 import { initialize } from 'dummy/initializers/setup-router-service-refresh-polyfill';
-import { module, test } from 'qunit';
+import { module } from 'qunit';
 import Resolver from 'ember-resolver';
 import { run } from '@ember/runloop';
+import { testIfPolyfilled } from '../../helpers/should-test-polyfill';
 
 module(
   'Unit | Initializer | setup-router-service-refresh-polyfill',
@@ -28,12 +29,15 @@ module(
       run(this.application, 'destroy');
     });
 
-    test('it adds the polyfilled refresh method to the RouterService', async function (assert) {
-      await this.application.boot();
-      const applicationInstance = this.application.buildInstance();
-      const routerService = applicationInstance.lookup('service:router');
+    testIfPolyfilled(
+      'it adds the polyfilled refresh method to the RouterService',
+      async function (assert) {
+        await this.application.boot();
+        const applicationInstance = this.application.buildInstance();
+        const routerService = applicationInstance.lookup('service:router');
 
-      assert.strictEqual(typeof routerService.refresh, 'function');
-    });
+        assert.strictEqual(typeof routerService.refresh, 'function');
+      }
+    );
   }
 );

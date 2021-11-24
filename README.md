@@ -7,7 +7,7 @@ Polyfills the RouterService#refresh method as described in [RFC 631](https://emb
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.4 or above
+* Ember.js v3.4 or above. The polyfill is disabled in Ember 4.1 and above.
 * Ember CLI v3.4 or above
 * Embroider safe and optimized
 * Node.js v12 or above
