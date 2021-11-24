@@ -33,7 +33,7 @@ module(
       const applicationInstance = this.application.buildInstance();
       const routerService = applicationInstance.lookup('service:router');
 
-      assert.equal(typeof routerService.refresh, 'function');
+      assert.strictEqual(typeof routerService.refresh, 'function');
     });
   }
 );
