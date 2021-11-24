@@ -42,44 +42,44 @@ module('Acceptance | RouterService | refresh', function (hooks) {
     );
 
     await visit('/');
-    assert.equal(parentCounter, 1);
-    assert.equal(childCounter, 0);
-    assert.equal(sisterCounter, 0);
+    assert.strictEqual(parentCounter, 1);
+    assert.strictEqual(childCounter, 0);
+    assert.strictEqual(sisterCounter, 0);
 
     await routerService.refresh();
-    assert.equal(parentCounter, 2);
-    assert.equal(childCounter, 0);
-    assert.equal(sisterCounter, 0);
+    assert.strictEqual(parentCounter, 2);
+    assert.strictEqual(childCounter, 0);
+    assert.strictEqual(sisterCounter, 0);
 
     await routerService.refresh('application');
-    assert.equal(parentCounter, 3);
-    assert.equal(childCounter, 0);
-    assert.equal(sisterCounter, 0);
+    assert.strictEqual(parentCounter, 3);
+    assert.strictEqual(childCounter, 0);
+    assert.strictEqual(sisterCounter, 0);
 
     await routerService.transitionTo('parent.child');
-    assert.equal(parentCounter, 3);
-    assert.equal(childCounter, 1);
-    assert.equal(sisterCounter, 0);
+    assert.strictEqual(parentCounter, 3);
+    assert.strictEqual(childCounter, 1);
+    assert.strictEqual(sisterCounter, 0);
 
     await routerService.refresh('parent.child');
-    assert.equal(parentCounter, 3);
-    assert.equal(childCounter, 2);
-    assert.equal(sisterCounter, 0);
+    assert.strictEqual(parentCounter, 3);
+    assert.strictEqual(childCounter, 2);
+    assert.strictEqual(sisterCounter, 0);
 
     await routerService.refresh('parent');
-    assert.equal(parentCounter, 4);
-    assert.equal(childCounter, 3);
-    assert.equal(sisterCounter, 0);
+    assert.strictEqual(parentCounter, 4);
+    assert.strictEqual(childCounter, 3);
+    assert.strictEqual(sisterCounter, 0);
 
     await routerService.transitionTo('parent.sister');
-    assert.equal(parentCounter, 4);
-    assert.equal(childCounter, 3);
-    assert.equal(sisterCounter, 1);
+    assert.strictEqual(parentCounter, 4);
+    assert.strictEqual(childCounter, 3);
+    assert.strictEqual(sisterCounter, 1);
 
     await routerService.refresh();
-    assert.equal(parentCounter, 5);
-    assert.equal(childCounter, 3);
-    assert.equal(sisterCounter, 2);
+    assert.strictEqual(parentCounter, 5);
+    assert.strictEqual(childCounter, 3);
+    assert.strictEqual(sisterCounter, 2);
   });
 
   test('it verifies that the provided route exists', async function (assert) {
