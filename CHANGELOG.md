@@ -1,6 +1,19 @@
 # Changelog
 
 
+
+## v1.1.0 (2022-11-15)
+
+#### :rocket: Enhancement
+* [#16](https://github.com/ember-polyfills/ember-router-service-refresh-polyfill/pull/16) Convert ember-cli-htmlbars to a devDependency ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#19](https://github.com/ember-polyfills/ember-router-service-refresh-polyfill/pull/19) Use Github Actions to publish to npm ([@Windvis](https://github.com/Windvis))
+* [#17](https://github.com/ember-polyfills/ember-router-service-refresh-polyfill/pull/17) Update to the v4.3.0 blueprints ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.1 (2022-01-19)
 
 #### :house: Internal
