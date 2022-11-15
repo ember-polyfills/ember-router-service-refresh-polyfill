@@ -91,7 +91,7 @@
     "plugins": {
       "release-it-lerna-changelog": {
         "infile": "CHANGELOG.md",
-        "launchEditor": true
+        "launchEditor": false
       }
     },
     "git": {
